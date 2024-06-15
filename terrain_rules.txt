@@ -1,0 +1,13 @@
+type|number|decay_rate|rules|color
+lava|12.0|10.0|{"burnt_rock":9}|(245, 177, 5)
+burnt_rock|11.0|20.0|{"lava":1, "rock":9}|(56, 38, 31)
+rock|10.0|5.0|{"burnt_rock":1, "plains":10,"dry":10, "cold":4}|(105, 98, 79)
+plains|9.0|3.0|{"rock":2, "shrubs":10, "dry":5, "cold":5, "shallows":5}|(227, 232, 155)
+shrubs|8.0|8.0|{"plains":2, "forest":10, "dry":2, "shallows":1}|(191, 224, 119)
+forest|7.0|4.0|{"shrubs":8}|(65, 145, 28)
+dry|6.0|8.0|{"plains":5, "shrubs":1, "desert":10, "cold":1}|(245, 242, 196)
+desert|5.0|4.0|{"rock":5, "dry":5}|(247, 229, 183)
+cold|4.0|8.0|{"plains":1,"dry":2,"glacier":10, "shallows":1}|(220, 250, 236)
+glacier|3.0|4.0|{"cold":4, "shallows":1, "ocean":0}|(245, 254, 254)
+shallows|2.0|15.0|{"plains":2, "shrubs":2,"dry":2,"cold":2, "ocean":10}|(10,215,86)
+ocean|1.0|1.0|{"glacier":5, "shallows":5, "ocean":10}|(0,104,149)
