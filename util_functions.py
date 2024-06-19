@@ -46,6 +46,8 @@ def parse_rules(path, delim="|"):
         data[2] = float(data[2])
         data[3]=ast.literal_eval(data[3])
         data[4]=ast.literal_eval(data[4])
+        data[5]=ast.literal_eval(data[5])
+        data[6]=ast.literal_eval(data[6])
         
         type_subdict = {}
         number_subdict = {}

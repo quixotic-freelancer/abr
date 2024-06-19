@@ -1,13 +1,15 @@
-type|number|decay_rate|rules|color
-lava|12.0|10.0|{"burnt_rock":9}|(245, 177, 5)
-burnt_rock|11.0|20.0|{"lava":1, "rock":9}|(56, 38, 31)
-rock|10.0|5.0|{"burnt_rock":1, "plains":10,"dry":10, "cold":4}|(105, 98, 79)
-plains|9.0|2.0|{"rock":2, "shrubs":10, "dry":5, "cold":5, "shallows":5}|(227, 232, 155)
-shrubs|8.0|3.0|{"plains":2, "forest":10, "dry":2, "shallows":7}|(191, 224, 119)
-forest|7.0|2.0|{"shrubs":8}|(65, 145, 28)
-dry|6.0|6.0|{"plains":5, "shrubs":1, "desert":10, "cold":1}|(245, 242, 196)
-desert|5.0|3.0|{"rock":5, "dry":5}|(247, 229, 183)
-cold|4.0|8.0|{"plains":1,"dry":2,"glacier":10, "shallows":5}|(220, 250, 236)
-glacier|3.0|20.0|{"cold":4, "shallows":6}|(245, 254, 254)
-shallows|2.0|5.0|{"plains":2, "shrubs":2,"dry":2,"cold":2, "shallows":5, "ocean":6}|(0,137,196)
-ocean|1.0|1.0|{"glacier":5, "shallows":5, "ocean":10}|(0,104,149)
+type|number|decay_rate|rules|color|region|elevation_rule
+lava|12.0|20.0|{"burnt_rock":9}|(245, 177, 5)|None|{"hp_to_elevation":1.0,"elevation_impact":0.5,"rules":{}}
+burnt_rock|11.0|12.0|{"lava":1, "rock":9}|(56, 38, 31)|None|{"hp_to_elevation":3.0,"elevation_impact":1.0,"rules":{"cold":5,"glacier":10}}
+rock|10.0|5.0|{"burnt_rock":1, "plains":10,"dry":10, "cold":4}|(105, 98, 79)|None|{"hp_to_elevation":3.0,"elevation_impact":0.5,"rules":{"cold":5,"glacier":10}}
+plains|9.0|2.0|{"rock":2, "shrubs":10, "dry":5, "cold":5, "shallows":5}|(227, 232, 155)|[("equator",3)]|{"hp_to_elevation":1.0,"elevation_impact":0.5,"rules":{}}
+shrubs|8.0|3.0|{"plains":2, "forest":10, "dry":2, "shallows":7}|(191, 224, 119)|[("north_center",7),("south_center",7),("north",0.1),("south",0.1)]|{"hp_to_elevation":1.0,"elevation_impact":0.5,"rules":{}}
+forest|7.0|2.0|{"shrubs":8}|(65, 145, 28)|[("north_center",6),("south_center",6),("north",0.1),("south",0.1)]|{"hp_to_elevation":1.0,"elevation_impact":1.5,"rules":{}}
+dry|6.0|6.0|{"plains":5, "shrubs":1, "desert":10, "cold":1}|(245, 242, 196)|[("equator",5),("north_center",0.1),("south_center",0.1)]|{"hp_to_elevation":1.0,"elevation_impact":0.5,"rules":{}}
+desert|5.0|3.0|{"rock":15, "dry":5, "plains":15, "deep_desert":15}|(247, 229, 183)|[("equator",7),("north_center",0.1),("south_center",0.1)]|{"hp_to_elevation":1.0,"elevation_impact":1.0,"rules":{}}
+cold|4.0|8.0|{"plains":1,"dry":2,"glacier":10, "shallows":5}|(220, 250, 236)|[("north",4),("south",4),("north_center",0.1),("south_center",0.1)]|{"hp_to_elevation":1.0,"elevation_impact":0.5,"rules":{}}
+glacier|3.0|20.0|{"cold":4, "shallows":6}|(245, 254, 254)|[("north",70),("south",70)]|{"hp_to_elevation":1.0,"elevation_impact":1.0,"rules":{}}
+shallows|2.0|5.0|{"plains":2, "shrubs":2,"dry":2,"cold":2, "shallows":5, "ocean":6}|(0,137,196)|None|{"hp_to_elevation":0.1,"elevation_impact":0.5,"rules":{}}
+ocean|1.0|1.0|{"glacier":5, "shallows":5, "ocean":10, "deep_ocean":15}|(0,104,149)|None|{"hp_to_elevation":0.3,"elevation_impact":0.5,"rules":{}}
+deep_ocean|13.0|1.5|{"ocean":5, "deep_ocean":25}|(4,75,106)|None|{"hp_to_elevation":1.0,"elevation_impact":0.5,"rules":{}}
+deep_desert|14.0|3.0|{"rock":13, "desert":5, "deep_desert":10}|(238, 206, 140)|[("equator",5)]|{"hp_to_elevation":1.0,"elevation_impact":0.5,"rules":{}}
